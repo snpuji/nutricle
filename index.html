@@ -1,6 +1,14 @@
 <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css"/>
-<?php include 'marketplace.php'; ?>
+<div id="marketplace"></div>
+
+<script>
+fetch("marketplace.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("marketplace").innerHTML = html;
+  });
+</script>
 <main>
 <!-- Hero Section -->
 
@@ -458,4 +466,12 @@
     </div>
 </section>
 </main>
-<?php include 'footer.php'; ?>
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("footer").innerHTML = html;
+  });
+</script>
