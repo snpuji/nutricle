@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bumirè | The Essence of Vitality</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cbae57",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#162d25", // Custom Deep Forest Green
+                        "beige": "#eae1d0",
+                        "sage": "#5f7960",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #162d25; /* Fixed forest green from prompt */
+        }
+        .serif-accent {
+            font-family: serif;
+        }
+        .text-beige { color: #eae1d0; }
+        .bg-forest { background-color: #162d25; }
+        .border-gold { border-color: #cbae57; }
+        .hover-gold:hover { color: #cbae57; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary/30">
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-primary text-2xl font-bold tracking-widest serif-accent">BUMIRÈ</span>
+</div>
+<ul class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wider text-beige/80 uppercase">
+<li><a class="hover-gold transition-colors" href="#">Home</a></li>
+<li><a class="hover-gold transition-colors" href="#about">About</a></li>
+<li><a class="hover-gold transition-colors" href="#products">Products</a></li>
+<li><a class="hover-gold transition-colors" href="#blog">Blog</a></li>
+<li><a class="hover-gold transition-colors" href="#contact">Contact</a></li>
+</ul>
+<button class="bg-primary text-background-dark px-8 py-2.5 rounded-full font-bold text-sm hover:brightness-110 transition-all uppercase tracking-widest">
+                Get a Quote
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Moringa Plantation" class="w-full h-full object-cover opacity-60" data-alt="Lush green moringa plantation field at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJCIIGisxh3jqBY91ZoXPGs_oE37FfRX4wFIKVAZcDI7Rgz2wWvu_Hczc9aeWxfKSrTOSwI2eb6HW58NbOunhvznNVLANRCHu7aPpkjrmplzkOXsY7iti70F1XoAlB6cELcidZFL15lPelT07UmFOq50qp5LpuxcG4Zd_LedSirGnKuKn-Zm6bXR-9D-B5Zzm_AUN1bL5HVssabAXH3JrtofksWqhOpWh7gtLfhFpqvI5oLllkOWrDlrVWCJv0gnQ4EbUnxnlUSujt"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark/60 via-background-dark/40 to-background-dark"></div>
+</div>
+<div class="relative z-10 text-center px-6">
+<span class="text-primary tracking-[0.3em] uppercase text-sm mb-4 block">Refined by Nature</span>
+<h1 class="text-6xl md:text-8xl serif-accent text-beige mb-8 font-light italic leading-tight">
+                    The Essence of <br/> Vitality
+                </h1>
+<button class="bg-primary text-background-dark px-12 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">
+                    Explore Our Collection
+                </button>
+</div>
+</section>
+<!-- About Us -->
+<section class="py-32 px-6 max-w-7xl mx-auto" id="about">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<span class="text-primary tracking-widest uppercase text-sm">Our Roots</span>
+<h2 class="text-4xl md:text-5xl serif-accent text-beige leading-snug">Cultivating excellence from the heart of the earth.</h2>
+<p class="text-lg text-slate-300 font-light leading-relaxed">
+                        Bumirè represents the pinnacle of sustainable agriculture. Our moringa is grown with ancestral wisdom and modern precision, ensuring every leaf carries the full potency of nature's most powerful superfood.
+                    </p>
+<div class="pt-6">
+<div class="h-px w-32 bg-primary"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="rounded-xl overflow-hidden aspect-[3/4] translate-y-8">
+<img alt="Botanical Leaves" class="w-full h-full object-cover" data-alt="Close up of vibrant green moringa leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs3a5qlakjS_wSTWJKSUPun3g5BCaJe9GYDUkhXTzHryoQ08xC_IOI3w11ETWEqhfcmwB0JWLmENvq6wVhpUZQGcELRvxzW6jpWp4MN2yhZ4EVWPQc3HBQ25ClHu-rDmcbqEn17UxY6xjK1pV55Ri43re1kuExU99pogeSu--8v_6uwfoF_S5u0Z1gtUYevy7YOO9ZwH3zMX-QWu7_L_E-U4zhnYtkO-GinWNHE043OicNtZAnWkW9V4VGeaooMdwi-lg3630Y_mRs"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-[3/4]">
+<img alt="Harvesting" class="w-full h-full object-cover" data-alt="Sustainable traditional harvesting methods in nature" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuM95OUAdEVyof6as1ESLygwL8OSRpHLs4f0fPK7k6y69wkRykmU-NdlYPcOmtpN_p4d6d4N1gL0AkPeG-Exi7Qzspy3mWz13E44w3W_yRiLdgT_wV0vPcirz6xuHN6zw6X7vldq69Ing1VTLqA8a8d6hUph40goxrAiwX_vyNoAn8UxmDub_iW80-K8yk5NxV79Z2IyI86tpDee8tcUyM5gwqLgLFhv_h3TfuZ15I-btDvwsHzU3vrmx0Q0enAu1dqNLtlL_lg7hl"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Features -->
+<section class="py-24 bg-background-dark/50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-8">
+<div class="p-10 bg-sage/20 border border-sage/30 rounded-lg hover:bg-sage/30 transition-colors group">
+<div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-8">
+<span class="material-icons text-primary">eco</span>
+</div>
+<h3 class="text-xl font-bold text-beige mb-4 uppercase tracking-wider">Organic Purity</h3>
+<p class="text-slate-400 font-light">100% certified organic farming without the use of synthetic chemicals or pesticides.</p>
+</div>
+<div class="p-10 bg-sage/20 border border-sage/30 rounded-lg hover:bg-sage/30 transition-colors group">
+<div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-8">
+<span class="material-icons text-primary">public</span>
+</div>
+<h3 class="text-xl font-bold text-beige mb-4 uppercase tracking-wider">Sustainable Export</h3>
+<p class="text-slate-400 font-light">Optimized global logistics reducing carbon footprint through premium efficient shipping.</p>
+</div>
+<div class="p-10 bg-sage/20 border border-sage/30 rounded-lg hover:bg-sage/30 transition-colors group">
+<div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-8">
+<span class="material-icons text-primary">volunteer_activism</span>
+</div>
+<h3 class="text-xl font-bold text-beige mb-4 uppercase tracking-wider">Fair Trade</h3>
+<p class="text-slate-400 font-light">Empowering local communities with ethical wages and sustainable infrastructure.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Products -->
+<section class="py-32 px-6" id="products">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<span class="text-primary tracking-widest uppercase text-sm block mb-4">The Collection</span>
+<h2 class="text-5xl serif-accent text-beige">Premium Export Grade</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<!-- Product 1 -->
+<div class="group">
+<div class="bg-background-dark border border-primary/10 rounded-lg overflow-hidden relative mb-6">
+<div class="aspect-square flex items-center justify-center p-12 bg-white/5 group-hover:bg-white/10 transition-colors">
+<img alt="Moringa Powder" class="w-full h-full object-contain drop-shadow-2xl scale-90 group-hover:scale-100 transition-transform" data-alt="Premium moringa powder in minimalist beige glass jar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhMMq4BAwICoTwVdsT9VAqk_gCJLCMPrRDxitPGA2wp_aC72jQ5hu8bcdAQARB-x_iBd7gkRrAuNHB8ezIRPUrKHkpMXrF3KxEORHYHtrBNys65b4xKjBuiklpWYK0l6-1o1HDIlVSfZGbiZHsOxWegsHFDpfKu6Vxg3PCVgUOOM4M9RWAKqpe1mSwkPtXQRVHfg5--tPlyZXyMZp-0vFJf6hNH5XGKkkmRvyVid71wZHCcRkJudjJBKAeQeliaxJoTnk22vvMWYya"/>
+</div>
+</div>
+<h4 class="text-2xl serif-accent text-beige mb-2">Ceremonial Powder</h4>
+<p class="text-primary font-medium tracking-widest text-sm uppercase mb-4">Moringa Oleifera</p>
+<button class="w-full py-4 border border-primary/30 text-primary rounded-full hover:bg-primary hover:text-background-dark transition-colors font-bold uppercase text-xs tracking-[0.2em]">
+                            View Details
+                        </button>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="bg-background-dark border border-primary/10 rounded-lg overflow-hidden relative mb-6">
+<div class="aspect-square flex items-center justify-center p-12 bg-white/5 group-hover:bg-white/10 transition-colors">
+<img alt="Moringa Oil" class="w-full h-full object-contain drop-shadow-2xl scale-90 group-hover:scale-100 transition-transform" data-alt="Cold pressed moringa oil in elegant dropper bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKIDF6EDXW86AKUAKaGvWN6XdcGkXieudn2B0Lng97Feeax9L-Kk2aIo1Lecsts_ZpBTC_FloVmAVeGypBqNSn9I1OZ9A7Hj9FpWGULSeoA1zqY9vggOjyHvul4IHwN-_1i3RjL5vly9Uw8021ruVkef4eZODvC1iEbcTfnwwb4DerUS3jQ066kt1jLr86wdaecFqdViNQcIAG9qWOGByDNyyFZy172llassRDyrqtUm-CoAGiOcGWZMgAD5tvP2rdMmGS1RlGp7xf"/>
+</div>
+</div>
+<h4 class="text-2xl serif-accent text-beige mb-2">Cold-Pressed Essence</h4>
+<p class="text-primary font-medium tracking-widest text-sm uppercase mb-4">Pure Botanical Oil</p>
+<button class="w-full py-4 border border-primary/30 text-primary rounded-full hover:bg-primary hover:text-background-dark transition-colors font-bold uppercase text-xs tracking-[0.2em]">
+                            View Details
+                        </button>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="bg-background-dark border border-primary/10 rounded-lg overflow-hidden relative mb-6">
+<div class="aspect-square flex items-center justify-center p-12 bg-white/5 group-hover:bg-white/10 transition-colors">
+<img alt="Moringa Tea" class="w-full h-full object-contain drop-shadow-2xl scale-90 group-hover:scale-100 transition-transform" data-alt="Artisanal moringa tea leaves in luxury gold-foil pouch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkQz0PQ7QCAN7vnb3qiz5gHhcLr0MBBt2BvOv6NqBre41UUEyrBUp7TsBGnD7WptPF7He4K02FTwJU0NvGYmgPk-M80pCHipsmG7VrRSFkWyKuczVJwCnaPHPjJlHBn34bX_UD3Yr_V_Bit7U23ZKoeoXXxnGmFnpEv8dlt9IqxYaCsitGLlTt398F9-p2_vCs3K6kDKTA0goJsmVNVhuB0e5JKE3AnXOxCnag5iv2w2L59ZZ4zl9nXU6nloREk3rliZ7y_HsmBJ5s"/>
+</div>
+</div>
+<h4 class="text-2xl serif-accent text-beige mb-2">Artisan Infusion</h4>
+<p class="text-primary font-medium tracking-widest text-sm uppercase mb-4">Herbal Tea Blend</p>
+<button class="w-full py-4 border border-primary/30 text-primary rounded-full hover:bg-primary hover:text-background-dark transition-colors font-bold uppercase text-xs tracking-[0.2em]">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-beige">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<span class="text-background-dark tracking-widest uppercase text-sm font-bold block mb-4">Elite Partners</span>
+<h2 class="text-4xl serif-accent text-background-dark mb-8">Shared visions of a greener future.</h2>
+<div class="flex gap-4">
+<span class="material-icons text-primary">star</span>
+<span class="material-icons text-primary">star</span>
+<span class="material-icons text-primary">star</span>
+<span class="material-icons text-primary">star</span>
+<span class="material-icons text-primary">star</span>
+</div>
+</div>
+<div class="space-y-8">
+<div class="bg-white/50 p-10 rounded-xl shadow-sm border border-black/5">
+<p class="text-xl text-background-dark italic serif-accent mb-6 leading-relaxed">
+                                "The quality of Bumirè's moringa powder is unparalleled. We have integrated it into our signature wellness line across all our European boutiques."
+                            </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-slate-200"></div>
+<div>
+<p class="font-bold text-background-dark uppercase text-xs tracking-widest">Elena Vance</p>
+<p class="text-slate-500 text-xs">Directrice, L'Organic Paris</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Section -->
+<section class="py-32 px-6" id="blog">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-end justify-between mb-16 border-b border-primary/20 pb-8">
+<div>
+<span class="text-primary tracking-widest uppercase text-sm block mb-4">Editorial</span>
+<h2 class="text-5xl serif-accent text-beige">Insights &amp; Wisdom</h2>
+</div>
+<a class="text-primary hover:underline underline-offset-8 tracking-widest uppercase text-xs font-bold mb-2" href="#">Read Journal</a>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<article class="space-y-6 group cursor-pointer">
+<div class="overflow-hidden rounded-lg">
+<img alt="Blog 1" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform" data-alt="Close up of vibrant green plant leaves and water droplets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9kYJ1kWyfDNNQm1yzeKBcL3gtTGZ4UxypfKHzK2lAecYwgZOOHVvZauL2zeyy3hnADLSW8jsZxOPPYoXjXGyswebTBtnXUbkNgTauAW6L-l69etpfOSTLlMP8caqFLtVYwhGe-tn95uNd8wxf19jl_4puYD9sx6oTfwTyT9bB7rlyQ7CNVXIzTA-G_dnkTusq0a2mD2RiFJekWCDsM9X9QsqFJQAjmyJjFWssPOuT5rzkS56JFwIOifplrzEUsY8_ScRIVq3QylYz"/>
+</div>
+<div class="flex items-center gap-4 text-xs text-primary uppercase tracking-[0.2em]">
+<span>Sustainability</span>
+<span class="w-1 h-1 rounded-full bg-primary/40"></span>
+<span>May 2024</span>
+</div>
+<h3 class="text-3xl serif-accent text-beige group-hover:text-primary transition-colors leading-tight">The Green Gold: Why Moringa is the Future of Global Nutrition</h3>
+<p class="text-slate-400 font-light line-clamp-2">Discover how this ancient botanical treasure is reshaping modern health landscapes across the globe through ethical trade.</p>
+</article>
+<article class="space-y-6 group cursor-pointer">
+<div class="overflow-hidden rounded-lg">
+<img alt="Blog 2" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform" data-alt="Lush green botanical garden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALOaqRyOrSxTpJVlred18f3j6OH0g6ma5PQkBUN61DE3cH4sqYzSj1kvuhheCxFrvY2bF4MGJzKUbIBQHHt9BXBjgrvWlFkvitrHlLl1VJD4cxPMTWuDBWIKNBiXZLoM1ccO2WBHImH-5xi9xHH__RMkGMaLLHSnUZcc9W1of_9lBANO35Ym2rY_qbXDuH0Xd5x5WfZOrLRzmA87SHsgJ1od1EecA7H2yi2JE5CnYGpdeVFy-EkT3QpNhhBPmeuFJEeOhzCt6apF-P"/>
+</div>
+<div class="flex items-center gap-4 text-xs text-primary uppercase tracking-[0.2em]">
+<span>Harvesting</span>
+<span class="w-1 h-1 rounded-full bg-primary/40"></span>
+<span>April 2024</span>
+</div>
+<h3 class="text-3xl serif-accent text-beige group-hover:text-primary transition-colors leading-tight">Beyond Extraction: The Art of Cold-Pressing Premium Moringa Oil</h3>
+<p class="text-slate-400 font-light line-clamp-2">A deep dive into our proprietary low-temperature extraction process that preserves molecular integrity.</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-dark pt-32 pb-16 border-t border-primary/10" id="contact">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-12 mb-20">
+<div class="col-span-2 space-y-8">
+<span class="text-primary text-3xl font-bold tracking-widest serif-accent">BUMIRÈ</span>
+<p class="text-slate-400 max-w-sm font-light leading-relaxed">
+                        Dedicated to the pursuit of botanical perfection and sustainable luxury for a discerning global audience.
+                    </p>
+<div class="flex gap-6">
+<a class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all" href="#">
+<i class="material-icons text-sm">facebook</i>
+</a>
+<a class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all" href="#">
+<i class="material-icons text-sm">photo_camera</i>
+</a>
+<a class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all" href="#">
+<i class="material-icons text-sm">mail</i>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="text-beige font-bold uppercase text-xs tracking-[0.3em]">Explore</h5>
+<ul class="space-y-4 text-slate-400 text-sm font-light">
+<li><a class="hover:text-primary transition-colors" href="#">Our Philosophy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Export Process</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Global Presence</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Lab Reports</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-beige font-bold uppercase text-xs tracking-[0.3em]">Legal</h5>
+<ul class="space-y-4 text-slate-400 text-sm font-light">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sustainability Report</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 text-xs uppercase tracking-widest font-light">© 2024 Bumirè Eco-Luxury. All Rights Reserved.</p>
+<div class="flex items-center gap-8 text-xs text-slate-500 uppercase tracking-widest">
+<span>Export Grade A++</span>
+<span>100% Organic</span>
+<span>Direct Origin</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

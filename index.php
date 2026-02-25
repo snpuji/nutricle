@@ -1,0 +1,470 @@
+<?php
+// --- SEO Variables khusus halaman Products ---
+$pageTitle = "Organic Turmeric & Moringa Powder | Bumire Wellness";
+$pageDescription = "Shop premium dried turmeric powder, moringa powder, and moringa latte mixes. 100% natural, organic, and sourced for vitality.";
+$pageKeywords = "turmeric dried, turmeric powder, moringa powder, moringa latte, organic spices, bumire";
+$pageUrl = "https://bumire.fwh.is/products.php";
+$pageImage = "https://bumire.fwh.is/image/og-products.jpg";
+$pageType = "product"; // Penting! Ini告诉 Google ini halaman produk
+
+include 'header.php'; 
+?>
+<?php include 'marketplace.php'; ?>
+<main>
+<!-- Hero Section -->
+
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0">
+        <img alt="Turmeric Plantation" class="w-full h-full object-cover opacity-60" 
+             src="https://image.qwenlm.ai/public_source/d26dba02-5ceb-49e5-a0b2-07ace7b1a819/2b83a697c-c2be-4215-8193-865810a7ac268224.png"/>
+        <div class="absolute inset-0 bg-gradient-to-b from-background-dark/60 via-background-dark/40 to-background-dark"></div>
+    </div>
+    
+    <div class="relative z-10 text-center px-6">
+        <span class="text-primary tracking-[0.3em] uppercase text-sm mb-4 block">Refined by Nature</span>
+        <h1 class="text-6xl md:text-8xl serif-accent text-beige mb-8 font-light italic leading-tight">
+            The Essence of <br/> Vitality
+        </h1>
+        
+        <!-- 2 Tombol Sejajar -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            
+            <!-- Button 1 - Gold/Primary -->
+            <a href="#products" class="btn-primary">
+                Explore Our Collection
+            </a>
+            
+            <!-- Button 2 - Sage (Buy via Official Store) -->
+            <button onclick="openMarketplaceModal()" class="btn-sage-hero">
+                <span class="material-icons text-lg">shopping_cart</span>
+                <span>Buy via Official Store</span>
+            </button>
+            
+        </div>
+    </div>
+</section>
+
+<!-- About Us -->
+<section class="py-32 px-6 max-w-7xl mx-auto" id="about">
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="space-y-8">
+            <span class="text-primary tracking-widest uppercase text-sm">About Us</span>
+            <h2 class="text-4xl md:text-5xl serif-accent text-beige leading-snug">Born from a belief in Indonesia’s natural richness.</h2>
+            <p class="text-lg text-slate-300 font-light leading-relaxed">
+                Bumiestari brings locally grown turmeric to the global market with carefully maintained quality and consistent processing..
+            </p>
+            <div class="pt-6">
+                <div class="h-px w-32 bg-primary"></div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Image 1 - Turmeric Plantation -->
+            <div class="rounded-xl overflow-hidden aspect-[3/4] translate-y-8">
+                <img alt="Turmeric Plantation" 
+                     class="w-full h-full object-cover" 
+                     src="image/Kunyit.jpg"/>
+            </div>
+            <!-- Image 2 - Fresh Harvest -->
+            <div class="rounded-xl overflow-hidden aspect-[3/4]">
+                <img alt="Fresh Turmeric Harvest" 
+                     class="w-full h-full object-cover" 
+                     src="image/Kunyit2.jpg"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="py-24 bg-beige">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-shadow duration-300">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-beige flex items-center justify-center">
+                    <span class="material-icons text-3xl" style="color: #162d25;">eco</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 serif-accent" style="color: #162d25;">Natural Process</h3>
+                <p class="text-gray-600 font-light mb-8 leading-relaxed">
+                    Turmeric is processed naturally through controlled drying and milling to preserve its color, aroma, and natural compounds.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-shadow duration-300">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-beige flex items-center justify-center">
+                    <span class="material-icons text-3xl" style="color: #162d25;">public</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 serif-accent" style="color: #162d25;">Organic Products</h3>
+                <p class="text-gray-600 font-light mb-8 leading-relaxed">
+                    Our turmeric is cultivated using natural farming practices without synthetic chemicals, maintaining purity from cultivation to processing.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white rounded-2xl p-10 text-center hover:shadow-xl transition-shadow duration-300">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-beige flex items-center justify-center">
+                    <span class="material-icons text-3xl" style="color: #162d25;">volunteer_activism</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 serif-accent" style="color: #162d25;">Biologically Safe</h3>
+                <p class="text-gray-600 font-light mb-8 leading-relaxed">
+                    Every handling stage follows proper hygiene standards to ensure the product is safe, clean, and suitable for consumption.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products -->
+<section class="products-section bg-background-light dark:bg-background-dark" id="products">
+    <div class="products-container">
+        <div class="products-header">
+            <span class="text-primary tracking-widest uppercase text-sm block mb-4">The Collection</span>
+            <h2 class="products-title serif-accent text-beige">Premium Export Grade</h2>
+        </div>
+        
+        <div class="products-grid">
+            <!-- Product 1: Turmeric Powder -->
+<div class="product-card group">
+    <!-- Link Wrapper untuk Gambar & Judul (SEO Friendly) -->
+    <a href="productdetail.php?product=turmeric-powder" class="block group">
+        <!-- Image Container -->
+        <div class="product-image-container">
+            <img 
+                alt="Premium Organic Turmeric Powder by Bumire" 
+                class="product-image" 
+                src="image/powder.png"/>
+        </div>
+        
+        <!-- Content -->
+        <div class="product-content">
+            <h4 class="product-title serif-accent">
+                Turmeric Powder
+            </h4>
+            <p class="product-subtitle">
+                Premium Ground Turmeric
+            </p>
+            
+            <!-- Price -->
+            <div class="product-price">
+                <span class="price-current">$4.40</span>
+                <span class="price-original">$6.00</span>
+            </div>
+        </div>
+    </a>
+    
+    <!-- Button (Tetap di luar link agar bisa trigger Modal) -->
+    <div class="product-button mt-4">
+        <button onclick="openMarketplaceModal()" class="btn-primary-full">
+            <span class="material-icons text-sm">shopping_cart</span>
+            <span class="text-sm">Buy via Official Store</span>
+        </button>
+    </div>
+</div>
+
+            <!-- Product 3 -->
+            <div class="product-card group">
+                <!-- Image Container -->
+                <div class="product-image-container">
+                    <img 
+                        alt="Moringa Latte" 
+                        class="product-image" 
+                        data-alt="Cold pressed moringa oil in elegant dropper bottle" 
+                        src="image/turmeric.png"/>
+                </div>
+                
+                <!-- Content -->
+                <div class="product-content">
+                    <h4 class="product-title serif-accent">
+                        Dried Turmeric
+                    </h4>
+                    <p class="product-subtitle">
+                        Natural Turmeric Slices
+                    </p>
+                    
+                    <!-- Price -->
+                    <div class="product-price">
+                        <span class="price-current">$3.80</span>
+                        <span class="price-original">$5.00</span>
+                    </div>
+                    
+                    <!-- Button -->
+                    <div class="product-button">
+                        <button onclick="openMarketplaceModal()" class="btn-primary-full">
+                            <span class="material-icons text-sm">shopping_cart</span>
+                            <span class="text-sm">Buy via Official Store</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card group">
+                <!-- Image Container -->
+                <div class="product-image-container">
+                    <img 
+                        alt="Dried Turmeric" 
+                        class="product-image" 
+                        data-alt="Cold pressed moringa oil in elegant dropper bottle" 
+                        src="image/turmeric.png"/>
+                </div>
+                
+                <!-- Content -->
+                <div class="product-content">
+                    <h4 class="product-title serif-accent">
+                        Dried Turmeric
+                    </h4>
+                    <p class="product-subtitle">
+                        Natural Turmeric Slices
+                    </p>
+                    
+                    <!-- Price -->
+                    <div class="product-price">
+                        <span class="price-current">$3.80</span>
+                        <span class="price-original">$5.00</span>
+                    </div>
+                    
+                    <!-- Button -->
+                    <div class="product-button">
+                        <button onclick="openMarketplaceModal()" class="btn-primary-full">
+                            <span class="material-icons text-sm">shopping_cart</span>
+                            <span class="text-sm">Buy via Official Store</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-24 bg-beige" id="testimonials">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            
+            <!-- Left Side - Content -->
+            <div class="sticky top-32">
+                <span class="text-primary tracking-widest uppercase text-sm font-bold block mb-4">Elite Partners</span>
+                <h2 class="text-4xl md:text-5xl serif-accent mb-6 leading-tight" style="color: #162d25;">
+                    Trusted by World-Class Wellness Brands
+                </h2>
+                <p class="text-lg font-light leading-relaxed mb-8" style="color: #162d25; opacity: 0.8;">
+                    Our commitment to quality has made us the primary supplier for leading luxury cosmetics and nutrition firms.
+                </p>
+                <div class="flex gap-2">
+                    <span class="material-icons text-primary">star</span>
+                    <span class="material-icons text-primary">star</span>
+                    <span class="material-icons text-primary">star</span>
+                    <span class="material-icons text-primary">star</span>
+                    <span class="material-icons text-primary">star</span>
+                </div>
+            </div>
+
+            <!-- Right Side - Testimonial Cards with Slider -->
+            <div class="relative">
+                <!-- Navigation Buttons -->
+                <button onclick="scrollTestimonials('prev')" class="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300" style="color: #162d25;">
+                    <span class="material-icons text-2xl">arrow_back</span>
+                </button>
+                
+                <button onclick="scrollTestimonials('next')" class="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300" style="color: #162d25;">
+                    <span class="material-icons text-2xl">arrow_forward</span>
+                </button>
+
+                <!-- Testimonials Container -->
+                <div id="testimonialsContainer" class="space-y-6 overflow-hidden">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex gap-1 mb-6">
+                            <span class="material-icons text-primary text-sm">star</span>
+                            <span class="material-icons text-primary text-sm">star</span>
+                            <span class="material-icons text-primary text-sm">star</span>
+                            <span class="material-icons text-primary text-sm">star</span>
+                            <span class="material-icons text-primary text-sm">star</span>
+                        </div>
+                        <p class="text-lg italic serif-accent mb-6 leading-relaxed" style="color: #162d25;">
+                            "The quality of Bumiestari's moringa powder is unparalleled. We have integrated it into our signature wellness line across all our European boutiques."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center">
+                                <span class="text-sm font-bold" style="color: #162d25;">EV</span>
+                            </div>
+                            <div>
+                                <p class="font-bold uppercase text-xs tracking-widest" style="color: #162d25;">Elena Vance</p>
+                                <p class="text-sm" style="color: #162d25; opacity: 0.6;">Directrice, L'Organic Paris</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex gap-1 mb-6">
+                            <span class="material-icons text-primary text-sm">star</span>
+                            <span class="material-icons text-primary text-sm">star</span>
+                            <span class="material-icons text-primary text-sm">star</span>
+                            <span class="material-icons text-primary text-sm">star</span>
+                            <span class="material-icons text-primary text-sm">star</span>
+                        </div>
+                        <p class="text-lg italic serif-accent mb-6 leading-relaxed" style="color: #162d25;">
+                            "Bumiestari's commitment to organic farming and sustainable practices aligns perfectly with our brand values. Their moringa oil is exceptional."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center">
+                                <span class="text-sm font-bold" style="color: #162d25;">MS</span>
+                            </div>
+                            <div>
+                                <p class="font-bold uppercase text-xs tracking-widest" style="color: #162d25;">Marcus Schmidt</p>
+                                <p class="text-sm" style="color: #162d25; opacity: 0.6;">CEO, Pure Botanics Berlin</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center gap-2 mt-6">
+                    <button onclick="goToTestimonial(0)" class="testimonial-dot w-2 h-2 rounded-full bg-primary transition-all duration-300"></button>
+                    <button onclick="goToTestimonial(1)" class="testimonial-dot w-2 h-2 rounded-full bg-primary/30 transition-all duration-300"></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.testimonial-dot');
+
+    function scrollTestimonials(direction) {
+        if (direction === 'next') {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        } else {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        }
+        updateTestimonials();
+    }
+
+    function goToTestimonial(index) {
+        currentTestimonial = index;
+        updateTestimonials();
+    }
+
+    function updateTestimonials() {
+        testimonials.forEach((card, index) => {
+            if (index === currentTestimonial) {
+                card.style.display = 'block';
+                card.style.opacity = '1';
+                card.style.transform = 'translateX(0)';
+            } else {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(20px)';
+            }
+        });
+
+        dots.forEach((dot, index) => {
+            if (index === currentTestimonial) {
+                dot.classList.remove('bg-primary/30');
+                dot.classList.add('bg-primary');
+                dot.style.width = '24px';
+            } else {
+                dot.classList.remove('bg-primary');
+                dot.classList.add('bg-primary/30');
+                dot.style.width = '8px';
+            }
+        });
+    }
+
+    // Initialize
+    updateTestimonials();
+</script>
+
+<!-- Blog Section -->
+<section class="py-32 px-6" id="blog">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="flex items-end justify-between mb-16 border-b border-primary/20 pb-8">
+            <div>
+                <span class="text-primary tracking-widest uppercase text-sm block mb-4">Editorial</span>
+                <h2 class="text-5xl serif-accent text-beige">Insights &amp; Wisdom</h2>
+            </div>
+            <a class="text-primary hover:underline underline-offset-8 tracking-widest uppercase text-xs font-bold mb-2" href="#">Read Journal</a>
+        </div>
+
+        <!-- Grid 3 Kolom -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Article 1 -->
+            <article class="space-y-6 group cursor-pointer">
+                <div class="overflow-hidden rounded-lg">
+                    <img 
+                        alt="Blog 1" 
+                        class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300" 
+                        data-alt="Close up of vibrant green plant leaves and water droplets" 
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoCqZZlHyVIAg65TVAK9oBcYUEgwHRV_4ElgWrFM37HxQqCv3_ynN0j6Q-SIU20asHwJmz4RKJCj4mMbdTCFbV4sr236yJGcaNsNvMR7_97Ua-5oAsFc3Dc2z7wSCJkYj2x3ClcaZy4z7wSBQl9Cf5jjFo5y9X2t_OGrCZcl-qt2AxBZGfAw3eN7XUvwCILhuAGIlwyqHoNIbXoz1b5O24A4u3e4NuEsIkQZ-0nh5aTjkfmUTJR7_3R62xRHcz07JoBJ6Vf0XJ_QBS"/>
+                </div>
+                <div class="flex items-center gap-4 text-xs text-primary uppercase tracking-[0.2em]">
+                    <span>Sustainability</span>
+                    <span class="w-1 h-1 rounded-full bg-primary/40"></span>
+                    <span>May 2024</span>
+                </div>
+                <h3 class="text-2xl serif-accent text-beige group-hover:text-primary transition-colors leading-tight">
+                    The Green Gold: Why Moringa is the Future of Global Nutrition
+                </h3>
+                <p class="text-slate-400 font-light line-clamp-2">
+                    Discover how this ancient botanical treasure is reshaping modern health landscapes across the globe through ethical trade.
+                </p>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="space-y-6 group cursor-pointer">
+                <div class="overflow-hidden rounded-lg">
+                    <img 
+                        alt="Blog 2" 
+                        class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300" 
+                        data-alt="Lush green botanical garden background" 
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9i-cPy3f3QVPQRT6gOVszDFS-G0RuQaj_BQeTgXKNHZKLslDo1LOUA0x5vYLvRaD9K552dd5eGq9CgPdYnH2SFwkoIul-dVPX0Zrob60qllZbWdVfK-NuYrMvN0G-DHnGIWf2gWDL0FKPUzKil5S74LVy6--o82RF9YJ-9pWzqFLRosc_y-0mwy89aWc5q9BX_wi-Z5MS5SW7sFldgA_uFJZZailTgzqircY3nSNcW8Q1o-PmFTz1ixx-qypaHg00rs8IFDzeTFN5"/>
+                </div>
+                <div class="flex items-center gap-4 text-xs text-primary uppercase tracking-[0.2em]">
+                    <span>Harvesting</span>
+                    <span class="w-1 h-1 rounded-full bg-primary/40"></span>
+                    <span>April 2024</span>
+                </div>
+                <h3 class="text-2xl serif-accent text-beige group-hover:text-primary transition-colors leading-tight">
+                    Beyond Extraction: The Art of Cold-Pressing Premium Moringa Oil
+                </h3>
+                <p class="text-slate-400 font-light line-clamp-2">
+                    A deep dive into our proprietary low-temperature extraction process that preserves molecular integrity.
+                </p>
+            </article>
+
+            <!-- Article 3 (Baru) -->
+            <article class="space-y-6 group cursor-pointer">
+                <div class="overflow-hidden rounded-lg">
+                    <img 
+                        alt="Blog 3" 
+                        class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300" 
+                        data-alt="Moringa plantation at golden hour" 
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuClbjgUhQXdyDcHT6q41jB3fiH8P9wj5Rpr6n1sD5E3EAGbYWR8JGcrR7kR_O-dw_aEfm4ZmXkqWv8Mr_mi3kFpAUx17eZvpfzr0DIXASDRnNxtewn3i6VShj8qJVgZtimnSwErqydEIFBGGEvoYtVFug4V5-wq2YTGD06zfUhFnf2rewQRjajbV13qTp6EqCdEtGer9LOUNbhPtUHv9I0dvZGI4sUo0gdgAq8vZfdDyLO5I5AS7Z8sYj527ce92O3d8DJD2CSwwKpB"/>
+                </div>
+                <div class="flex items-center gap-4 text-xs text-primary uppercase tracking-[0.2em]">
+                    <span>Wellness</span>
+                    <span class="w-1 h-1 rounded-full bg-primary/40"></span>
+                    <span>March 2024</span>
+                </div>
+                <h3 class="text-2xl serif-accent text-beige group-hover:text-primary transition-colors leading-tight">
+                    From Soil to Soul: The Journey of Premium Moringa
+                </h3>
+                <p class="text-slate-400 font-light line-clamp-2">
+                    Follow the path of our moringa from ancestral farms to your wellness ritual, crafted with intention at every step.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+</main>
+<?php include 'footer.php'; ?>
