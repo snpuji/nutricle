@@ -1,75 +1,217 @@
-
-<? include 'header.php'; ?>
-    <link rel="stylesheet" href="css/style.css"/>
-<body>
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!-- ===== PAGE TITLE ===== -->
+    <title>Nuricle</title>
+    <!-- ===== FAVICON & ASSETS ===== -->
+    <link rel="shortcut icon" type="image/x-icon" href="image/nc1.png"/>
     
-    <!-- ===== PRODUCT HEADER ===== -->
-    <header class="product-header">
-        <div class="container">
-            <div class="product-grid">
-                
-                <!-- Product Image -->
-                <div class="product-image-wrapper animate-fade-in">
-                    <span class="product-badge">Bestseller</span>
-                    <img 
-                        src="https://images.unsplash.com/photo-1615486511484-92e572f5b6c3?auto=format&fit=crop&w=800&q=80" 
-                        alt="Premium organic turmeric powder in kraft paper pouch with wooden scoop, vibrant golden-yellow spice"
-                        class="product-image"
-                        width="600"
-                        height="600"
-                        loading="eager"
-                    >
-                </div>
-                
-                <!-- Product Info -->
-                <div class="product-info animate-fade-in">
-                    <nav class="product-breadcrumb" aria-label="Breadcrumb">
-                        <a href="/">Home</a>
-                        <a href="#products">Products</a>
-                        <span>Turmeric Powder</span>
-                    </nav>
-                    
-                    <h1 class="product-title">Turmeric Powder</h1>
-                    <p class="product-tagline">Premium ground turmeric from Java's volcanic soil — rich in curcumin, naturally vibrant.</p>
-                    
-                    <div class="product-price">
-                        <span class="price-current">$4.40</span>
-                        <span class="price-original">$6.00</span>
-                        <span class="price-note">per 100g</span>
-                    </div>
-                    
-                    <button class="btn btn-outline" onclick="openMarketplaceModal()">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9,22 9,12 15,12 15,22"/>
-                        </svg>
-                        Buy via Official Store
-                    </button>
-                    
-                    <div class="product-meta">
-                        <div class="product-meta-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                            </svg>
-                            <span>127 reviews</span>
-                        </div>
-                        <div class="product-meta-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                <line x1="16" y1="2" x2="16" y2="6"/>
-                                <line x1="8" y1="2" x2="8" y2="6"/>
-                                <line x1="3" y1="10" x2="21" y2="10"/>
-                            </svg>
-                            <span>Ships in 24h</span>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts (URL sudah dibersihkan dari spasi) -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/productdetail.css"/>
+    
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#cbae57",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#162d25",
+                        "beige": "#eae1d0",
+                        "sage": "#5f7960",
+                    },
+                    fontFamily: { "display": ["Space Grotesk"] },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary/30">
+
+<!-- Overlay untuk mobile menu (klik luar untuk close) -->
+<div id="menuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden" onclick="toggleMobileMenu()"></div>
+
+<!-- Header -->
+<header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+    <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+            <img src="image/nutri1.png" alt="Nutricle Logo" class="h-10 w-auto object-contain"/>
         </div>
-    </header>
+
+        <!-- Desktop Menu (hidden on mobile) -->
+        <ul class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wider text-beige uppercase">
+            <li>
+                <a class="hover:text-primary transition-colors <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'text-primary' : ''; ?>" 
+                href="index.php">Home</a>
+            </li>
+            <li>
+                <a class="hover:text-primary transition-colors <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'text-primary' : ''; ?>" 
+                href="about.php">About</a>
+            </li>
+            <li>
+                <a class="hover:text-primary transition-colors <?php echo basename($_SERVER['PHP_SELF']) == 'products.php' ? 'text-primary' : ''; ?>" 
+                href="products.php">Products</a>
+            </li>
+            <li>
+                <a class="hover:text-primary transition-colors <?php echo basename($_SERVER['PHP_SELF']) == 'blog.php' ? 'text-primary' : ''; ?>" 
+                href="blog.php">Blog</a>
+            </li>
+            <li>
+                <a class="hover:text-primary transition-colors <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'text-primary' : ''; ?>" 
+                href="contact.php">Contact</a>
+            </li>
+        </ul>
+
+        <!-- Desktop Button (hidden on mobile) -->
+        <button onclick="openMarketplaceModal()" class="hidden md:block bg-primary text-background-dark px-8 py-2.5 rounded-full font-bold text-sm hover:brightness-110 transition-all uppercase tracking-widest">
+            <span class="text-sm">Get Started</span>
+        </button>
+
+        <!-- Hamburger Button (visible on mobile) -->
+        <button id="hamburgerBtn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span class="hamburger-line w-6 h-0.5 bg-beige rounded"></span>
+            <span class="hamburger-line w-6 h-0.5 bg-beige rounded"></span>
+            <span class="hamburger-line w-6 h-0.5 bg-beige rounded"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu (dropdown) -->
+    <div id="mobileMenu" class="md:hidden bg-background-dark/95 backdrop-blur-md border-b border-primary/20">
+        <div class="px-6 py-4 space-y-2">
+            <a class="block py-3 text-beige hover:text-primary transition-colors font-medium uppercase tracking-wider text-sm border-b border-primary/10 <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'text-primary' : ''; ?>" 
+            href="index.php" onclick="toggleMobileMenu()">Home</a>
+            <a class="block py-3 text-beige hover:text-primary transition-colors font-medium uppercase tracking-wider text-sm border-b border-primary/10 <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'text-primary' : ''; ?>" 
+            href="about.php" onclick="toggleMobileMenu()">About</a>
+            <a class="block py-3 text-beige hover:text-primary transition-colors font-medium uppercase tracking-wider text-sm border-b border-primary/10 <?php echo basename($_SERVER['PHP_SELF']) == 'products.php' ? 'text-primary' : ''; ?>" 
+            href="products.php" onclick="toggleMobileMenu()">Products</a>
+            <a class="block py-3 text-beige hover:text-primary transition-colors font-medium uppercase tracking-wider text-sm border-b border-primary/10 <?php echo basename($_SERVER['PHP_SELF']) == 'blog.php' ? 'text-primary' : ''; ?>" 
+            href="blog.php" onclick="toggleMobileMenu()">Blog</a>
+            <a class="block py-3 text-beige hover:text-primary transition-colors font-medium uppercase tracking-wider text-sm <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'text-primary' : ''; ?>" 
+            href="contact.php" onclick="toggleMobileMenu()">Contact</a>
+            
+            <!-- Mobile Button -->
+            <button class="w-full mt-4 bg-primary text-background-dark px-6 py-3 rounded-full font-bold text-sm hover:brightness-110 transition-all uppercase tracking-widest">
+                Get a Quote
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- JavaScript untuk Header Scroll + Mobile Menu -->
+<script>
+    // ===== HEADER SCROLL EFFECT =====
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('bg-background-dark/95', 'backdrop-blur-md', 'border-b', 'border-primary/20', 'shadow-lg');
+            header.classList.remove('bg-transparent');
+        } else {
+            header.classList.remove('bg-background-dark/95', 'backdrop-blur-md', 'border-b', 'border-primary/20', 'shadow-lg');
+            header.classList.add('bg-transparent');
+        }
+    });
+
+    // ===== MOBILE MENU TOGGLE =====
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('menuOverlay');
+        const hamburger = document.getElementById('hamburgerBtn');
+        
+        menu.classList.toggle('active');
+        overlay.classList.toggle('hidden');
+        hamburger.classList.toggle('hamburger-active');
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Close menu when clicking a link (for anchor links)
+    document.querySelectorAll('#mobileMenu a[href^="#"]').forEach(link => {
+        link.addEventListener('click', () => {
+            setTimeout(() => {
+                const menu = document.getElementById('mobileMenu');
+                const overlay = document.getElementById('menuOverlay');
+                const hamburger = document.getElementById('hamburgerBtn');
+                
+                menu.classList.remove('active');
+                overlay.classList.add('hidden');
+                hamburger.classList.remove('hamburger-active');
+                document.body.style.overflow = '';
+            }, 200);
+        });
+    });
+</script>
 
     <main>
+    <!-- ===== PRODUCT HEADER SECTION ===== -->
+        <section class="product-header py-20">
+            <div class="container">
+                <div class="product-grid">
+                    
+                    <!-- Product Image -->
+                    <div class="product-image-wrapper animate-fade-in">
+                        <span class="product-badge">Bestseller</span>
+                        <img 
+                            src="image/powder.png" 
+                            alt="Premium organic turmeric powder"
+                            class="product-image"
+                            width="600"
+                            height="600"
+                            loading="eager"
+                        >
+                    </div>
+                    
+                    <!-- Product Info -->
+                    <div class="product-info animate-fade-in">
+                        <nav class="product-breadcrumb" aria-label="Breadcrumb">
+                            <a href="index.php">Home</a>
+                            <a href="index.php#products">Products</a>
+                            <span>Turmeric Powder</span>
+                        </nav>
+                        
+                        <h1 class="product-title">Turmeric Powder</h1>
+                        <p class="product-tagline">Premium ground turmeric from Java's volcanic soil — rich in curcumin, naturally vibrant.</p>
+                        
+                        <div class="product-price">
+                            <span class="price-current">$4.40</span>
+                            <span class="price-original">$6.00</span>
+                            <span class="price-note">per 100g</span>
+                        </div>
+                        
+                        <button class="btn-primary-full" onclick="openMarketplaceModal()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                            Buy via Official Store
+                        </button>
+                        
+                        <div class="product-meta">
+                            <!-- ... meta items ... -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
         <!-- ===== DESCRIPTION SECTION ===== -->
         <section class="product-section">
             <div class="container">
@@ -274,11 +416,14 @@
                 
             </div>
         </section>
-
-        <!-- ===== PRODUCT DETAILS SECTION ===== -->
-        <section class="product-section">
-            <div class="container">
-                <div class="section-header">
+<!-- ===== PRODUCT DETAILS & STORAGE SECTION ===== -->
+<section class="product-section">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            
+            <!-- LEFT COLUMN: Product Details -->
+            <div class="details-column">
+                <div class="section-header mb-6">
                     <h2 class="section-title">Product Details</h2>
                 </div>
                 <ul class="details-list">
@@ -337,12 +482,10 @@
                     </li>
                 </ul>
             </div>
-        </section>
-
-        <!-- ===== STORAGE SECTION ===== -->
-        <section class="product-section">
-            <div class="container">
-                <div class="section-header">
+            
+            <!-- RIGHT COLUMN: Storage & Freshness (Sticky on Desktop) -->
+            <div class="storage-column">
+                <div class="section-header mb-6">
                     <h2 class="section-title">Storage & Freshness</h2>
                 </div>
                 <div class="storage-card">
@@ -357,10 +500,79 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Optional: Tambahan visual/CTA di kanan -->
+                <div class="storage-extra mt-6 p-4 rounded-xl bg-beige/10 border border-primary/10">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                            <strong>Pro Tip:</strong> Label your container with the opening date to track freshness easily.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </section>
+            
+        </div>
+    </div>
+</section>
     </main>
 
+<!-- Footer -->
+<footer class="bg-background-dark pt-32 pb-16 border-t border-primary/10" id="contact">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-2 space-y-8">
+                <img 
+                    src="image/nutri1.png" 
+                    alt="Nutricle Logo" 
+                    class="h-12 w-auto object-contain"
+                />
+                <p class="text-slate-400 max-w-sm font-light leading-relaxed">
+                    Dedicated to the pursuit of botanical perfection and sustainable luxury for a discerning global audience.
+                </p>
+                <div class="flex gap-6">
+                    <a class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all" href="#">
+                        <i class="material-icons text-sm">facebook</i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all" href="#">
+                        <i class="material-icons text-sm">photo_camera</i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-background-dark transition-all" href="#">
+                        <i class="material-icons text-sm">mail</i>
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h5 class="text-beige font-bold uppercase text-xs tracking-[0.3em]">Explore</h5>
+                <ul class="space-y-4 text-slate-400 text-sm font-light">
+                    <li><a class="hover:text-primary transition-colors" href="#">Our Philosophy</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Export Process</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Global Presence</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Lab Reports</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h5 class="text-beige font-bold uppercase text-xs tracking-[0.3em]">Legal</h5>
+                <ul class="space-y-4 text-slate-400 text-sm font-light">
+                    <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Sustainability Report</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-slate-500 text-xs uppercase tracking-widest font-light">© 2024 Nutricle Eco-Luxury. All Rights Reserved.</p>
+            <div class="flex items-center gap-8 text-xs text-slate-500 uppercase tracking-widest">
+                <span>Export Grade A++</span>
+                <span>100% Organic</span>
+                <span>Direct Origin</span>
+            </div>
+        </div>
+    </div>
+</footer>
     <!-- ===== JAVASCRIPT ===== -->
     <script>
         
