@@ -3,48 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    
-    <!-- ===== PHP SEO LOGIC (Default Values) ===== -->
-    <?php
-    // Cek apakah variabel sudah didefinisikan di halaman. Jika belum, pakai default.
-    if (!isset($pageTitle)) $pageTitle = "Bumire | The Essence of Vitality";
-    if (!isset($pageDescription)) $pageDescription = "Bumire offers premium natural wellness products crafted from the finest botanical ingredients. Discover the essence of vitality with our curated collection.";
-    if (!isset($pageKeywords)) $pageKeywords = "bumire, natural wellness, essential oils, herbal products, vitality, organic skincare";
-    
-    // URL absolut untuk domain gratisan
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
-    if (!isset($pageUrl)) $pageUrl = "$protocol://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    
-    // Image URL wajib absolut untuk Open Graph
-    if (!isset($pageImage)) $pageImage = "https://bumire.fwh.is/image/og-bumire.jpg";
-    if (!isset($pageType)) $pageType = "website";
-    if (!isset($siteName)) $siteName = "Bumire";
-    ?>
-    
-    <!-- ===== PRIMARY META TAGS ===== -->
-    <title><?php echo htmlspecialchars($pageTitle); ?></title>
-    <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>"/>
-    <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>"/>
-    <meta name="robots" content="index, follow"/>
-    <link rel="canonical" href="<?php echo htmlspecialchars($pageUrl); ?>"/>
-    <meta name="author" content="Bumire"/>
-    
-    <!-- ===== OPEN GRAPH / FACEBOOK ===== -->
-    <meta property="og:type" content="<?php echo htmlspecialchars($pageType); ?>"/>
-    <meta property="og:url" content="<?php echo htmlspecialchars($pageUrl); ?>"/>
-    <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>"/>
-    <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>"/>
-    <meta property="og:image" content="<?php echo htmlspecialchars($pageImage); ?>"/>
-    <meta property="og:site_name" content="<?php echo htmlspecialchars($siteName); ?>"/>
-    <meta property="og:locale" content="en_US"/>
-    
-    <!-- ===== TWITTER CARD ===== -->
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:url" content="<?php echo htmlspecialchars($pageUrl); ?>"/>
-    <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>"/>
-    <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>"/>
-    <meta name="twitter:image" content="<?php echo htmlspecialchars($pageImage); ?>"/>
-    
+    <!-- ===== PAGE TITLE ===== -->
+    <title>Nuricle</title>
     <!-- ===== FAVICON & ASSETS ===== -->
     <link rel="shortcut icon" type="image/x-icon" href="image/iconbumire.png"/>
     
